@@ -1,0 +1,55 @@
+There are two different sets of queries we can run that accomplish the same goal.
+
+The results from these queries presupposes that you have created a Cloud Storage Bucket, and placed the csv files being referenced in said buckets.
+
+*** SET 1 ***
+
+CREATE EXTERNAL TABLE IF NOT EXISTS music_queries.albums
+OPTIONS (
+  format = 'CSV',
+  uris = ['gs://challenge-3-bucket/albums.csv']
+)
+
+CREATE EXTERNAL TABLE IF NOT EXISTS music_queries.instruments
+OPTIONS (
+  format = 'CSV',
+  uris = ['gs://challenge-3-bucket/instruments.csv']
+)
+
+CREATE EXTERNAL TABLE IF NOT EXISTS music_queries.likes
+OPTIONS (
+  format = 'CSV',
+  uris = ['gs://challenge-3-bucket/likes.csv']
+)
+
+CREATE EXTERNAL TABLE IF NOT EXISTS music_queries.posts
+OPTIONS (
+  format = 'CSV',
+  uris = ['gs://challenge-3-bucket/posts.csv']
+)
+
+*** SET 2 ***
+
+CREATE OR REPLACE EXTERNAL TABLE music_queries.albums
+OPTIONS (
+  format = 'CSV',
+  uris = ['gs://challenge-3-bucket/albums.csv']
+)
+
+CREATE OR REPLACE EXTERNAL TABLE music_queries.instruments
+OPTIONS (
+  format = 'CSV',
+  uris = ['gs://challenge-3-bucket/instruments.csv']
+)
+
+CREATE OR REPLACE EXTERNAL TABLE music_queries.likes
+OPTIONS (
+  format = 'CSV',
+  uris = ['gs://challenge-3-bucket/likes.csv']
+)
+
+CREATE OR REPLACE EXTERNAL TABLE music_queries.posts
+OPTIONS (
+  format = 'CSV',
+  uris = ['gs://challenge-3-bucket/posts.csv']
+)
