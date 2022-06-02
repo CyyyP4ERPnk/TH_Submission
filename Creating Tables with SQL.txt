@@ -2,6 +2,8 @@ There are two different sets of queries we can run that accomplish the same goal
 
 The results from these queries presupposes that you have created a Cloud Storage Bucket, and placed the csv files being referenced in said buckets.
 
+Video of this being done can be viewed here: https://watch.screencastify.com/v/edrcT03Lwpof52bY2Atf
+
 *** SET 1 ***
 
 CREATE EXTERNAL TABLE IF NOT EXISTS music_queries.albums
