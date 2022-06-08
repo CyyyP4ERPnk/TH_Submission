@@ -1,0 +1,20 @@
+# This solution nestles a function inside our query; We're selecting the title from ouyr albums table with the first line of the script. 
+# You specify the artist that you want to return query, and include the "AND" operator in your "WHERE" clause; We want to show titles with a price higher than the average
+# price of the artist titles; so we specify within the function to make the selection from our album table, where our artist is named.
+
+
+SELECT Title FROM `sada-bigquery-challenge-1.music_queries.albums`
+WHERE Artist = 'John Coltrane' AND Price > (SELECT AVG(Price)
+FROM `sada-bigquery-challenge-1.music_queries.albums`
+WHERE Artist = 'John Coltrane')
+
+SELECT Title FROM `sada-bigquery-challenge-1.music_queries.albums`
+WHERE Artist = 'Miles Davis' AND Price > (SELECT AVG(Price)
+FROM `sada-bigquery-challenge-1.music_queries.albums`
+WHERE Artist = ''Miles Davis'')
+
+SELECT Title FROM `sada-bigquery-challenge-1.music_queries.albums`
+WHERE Artist = 'Charles Mingus' AND Price > (SELECT AVG(Price)
+FROM `sada-bigquery-challenge-1.music_queries.albums`
+WHERE Artist = 'Charles Mingus')
+
